@@ -1,0 +1,6 @@
+.DS_Store
+.vscode
+__pycache__/
+FamilyCBEnv/
+db.sqlite3
+connection.py
