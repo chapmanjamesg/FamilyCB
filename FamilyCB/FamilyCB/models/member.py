@@ -3,14 +3,15 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Customer(models.Model):
+class Member(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_active = models.BooleanField()
+    userName = models.CharField(max_length=50, null=True)
     firstName = models.CharField(max_length=255, null=True)
     lastName = models.CharField(max_length=50, null=True)
     email = models.models.EmailField(max_length=254)
-    familyId = models.ForeignKey("Family", verbose_name=_("Families"), on_delete=models.CASCADE)
+    familyId = models.ForeignKey("Family", verbose_name=("Families"), on_delete=models.CASCADE)
     
 
 
