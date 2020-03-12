@@ -2,37 +2,36 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from FamilyCB.models import User, Family
+from FamilyCB.models import Member, Family
 from FamilyCB.models import model_factory
 from ..connection import Connection
 
 
-def get_User(userId):
+def get_member(memberId):
     with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(User)
+        conn.row_factory = model_factory(Member)
         db_cursor = conn.cursor()
 
         db_cursor.execute("""
         SELECT
-            u.id,
-            u.firstName,
-            u.lastName,
-            u.email,
-            u.familyId
-        FROM FamilyCB_User u
-        WHERE u.id = ?
-        """, (userId,))
+            m.id,
+            m.firstName,
+            m.lastName,
+            m.email,
+        FROM FamilyCB_member m
+        WHERE m.id = ?
+        """, (memberId,))
 
         return db_cursor.fetchone()
 
 @login_required
-def user_details(request, userId):
+def member_details(request, memberId):
     if request.method == 'GET':
-        librarian = get_User(userId)
+        member = get_member(memberId)
 
-        template = 'users/detail.html'
+        template = 'members/detail.html'
         context = {
-            'user': user
+            'member': member
         }
 
         return render(request, template, context)

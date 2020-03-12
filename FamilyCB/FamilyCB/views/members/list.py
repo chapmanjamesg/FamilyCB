@@ -1,45 +1,45 @@
 import sqlite3
 from django.shortcuts import render
-from FamilyCB.models import User
+from FamilyCB.models import Member
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def list_users(request):
+def list_members(request):
     with sqlite3.connect(Connection.db_path) as conn:
         conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
 
         db_cursor.execute("""
         select
-            u.id,
-            u.location_id,
-            u.user_id,
-            u.first_name,
-            u.last_name,
-            u.email
-        from libraryapp_librarian l
-        join auth_user u on l.user_id = u.id
+            m.id,
+            m.userId,
+            u.firstName,
+            u.lastName,
+            u.email,
+            u.userName
+        from FamilyCB_member m 
+        join auth_user u on m.userId = u.id
         """)
 
-        all_librarians = []
+        all_members = []
         dataset = db_cursor.fetchall()
 
         for row in dataset:
-            lib = Librarian()
-            lib.id = row["id"]
-            lib.location_id = row["location_id"]
-            lib.user_id = row["user_id"]
-            lib.first_name = row["first_name"]
-            lib.last_name = row["last_name"]
-            lib.email = row["email"]
+            mem = Member()
+            mem.id = row["id"]
+            mem.userId = row["userId"]
+            mem.firstName = row["firstName"]
+            mem.lastName = row["lastName"]
+            mem.email = row["email"]
+            mem.userName = row["userName"]
 
-            all_librarians.append(lib)
+            all_members.append(mem)
 
-    template_name = 'librarians/list.html'
+    template_name = 'members/list.html'
 
     context = {
-        'all_librarians': all_librarians
+        'all_members': all_members
     }
 
     return render(request, template_name, context)
