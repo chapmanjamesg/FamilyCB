@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "name": "Baked Chicken",
-            "ingredientId": [1,2,3,4],
+            "ingredientId": [],
             "instruction": "Season the chicken well on both sides. Place on a baking sheets, and cook for 45 minutes or until the inner tempature is 165 degrees",
             "commentId": [],
             "memberId": 1,
@@ -16,7 +16,7 @@
         "pk": 2,
         "fields": {
             "name": "Seared Steak",
-            "ingredientId": [2,5,6],
+            "ingredientId": [],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
             "commentId": [],
             "memberId": 1,
@@ -28,7 +28,7 @@
         "pk": 3,
         "fields": {
             "name": "Baked Potato",
-            "ingredientId": [7],
+            "ingredientId": [],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
             "commentId": [],
             "memberId": 1,
@@ -40,7 +40,7 @@
         "pk": 4,
         "fields": {
             "name": "Roasted Vegetables",
-            "ingredientId": [8,9,10],
+            "ingredientId": [],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
             "commentId": [],
             "memberId": 1,
@@ -52,7 +52,7 @@
         "pk": 5,
         "fields": {
             "name": "Rice",
-            "ingredientId": [11],
+            "ingredientId": [],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
             "commentId": [],
             "memberId": 1,
@@ -64,7 +64,7 @@
         "pk": 6,
         "fields": {
             "name": "Scrambled Eggs",
-            "ingredientId": [12, 13, 14],
+            "ingredientId": [],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
             "commentId": [],
             "memberId": 1,
