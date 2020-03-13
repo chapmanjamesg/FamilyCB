@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'safedelete',
-    'FamilyCB',
+    'FamilyCBProject',
 ]
 
 REST_FRAMEWORK = {
