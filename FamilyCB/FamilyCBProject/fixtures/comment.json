@@ -1,0 +1,26 @@
+[
+    {
+        "model": "FamilyCBProject.comment",
+        "pk": 1,
+        "fields": {
+            "comment": "OMG this is so tasty",
+            "memberId": 1
+        }
+    },
+    {
+        "model": "FamilyCBProject.comment",
+        "pk": 2,
+        "fields": {
+            "comment": "Mabye try adding in cayenne pepper",
+            "memberId": 1
+        }
+    },
+    {
+        "model": "FamilyCBProject.comment",
+        "pk": 3,
+        "fields": {
+            "comment": "This goes great with a cheese sauce",
+            "memberId": 1
+        }
+    }
+]
