@@ -1,0 +1,29 @@
+[
+    {
+        "model": "FamilyCBProject.ingredient",
+        "pk": 1,
+        "fields": {
+            "name": "Chicken Breast",
+            "quantity": 1,
+            "measurement": "pound"
+        }
+    },
+    {
+        "model": "FamilyCBProject.ingredient",
+        "pk": 2,
+        "fields": {
+            "name": "cayenne pepper",
+            "quantity": 1,
+            "measurement": "tsp"
+        }
+    },
+    {
+        "model": "FamilyCBProject.ingredient",
+        "pk": 3,
+        "fields": {
+            "name": "Garlic",
+            "quantity": 3,
+            "measurement": "cloves"
+        }
+    }
+]

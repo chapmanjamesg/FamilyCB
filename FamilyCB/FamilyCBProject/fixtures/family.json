@@ -1,0 +1,68 @@
+[
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 1,
+        "fields": {
+            "name": "Chapman",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "private"
+        }
+    },
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 2,
+        "fields": {
+            "name": "Cohort 36",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "public"
+        }
+    },
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 3,
+        "fields": {
+            "name": "Blue Book",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "public"
+        }
+    },
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 4,
+        "fields": {
+            "name": "James'",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "personal"
+        }
+    },
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 5,
+        "fields": {
+            "name": "Simmons",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "private"
+        }
+    },
+    {
+        "model": "FamilyCBProject.family",
+        "pk": 6,
+        "fields": {
+            "name": "NSS",
+            "creator": 1,
+            "memberId": [],
+            "recipeId": [],
+            "privacy": "public"
+        }
+    }
+]
