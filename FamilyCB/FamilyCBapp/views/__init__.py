@@ -7,3 +7,4 @@ from .members.form import member_edit_form, member_form
 
 from .recipes.list import list_recipes
 from .recipes.details import recipe_details
+from .recipes.form import recipe_edit_form, recipe_form

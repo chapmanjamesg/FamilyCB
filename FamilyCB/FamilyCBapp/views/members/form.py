@@ -14,7 +14,7 @@ def get_families():
         SELECT
             f.id,
             f.name
-        FROM FamilyCBapp_family d
+        FROM FamilyCBapp_family f
         """)
 
         return db_cursor.fetchall()
