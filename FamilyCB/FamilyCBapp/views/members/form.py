@@ -14,7 +14,7 @@ def get_families():
         SELECT
             f.id,
             f.name
-        FROM FamilyCBapp_family d
+        FROM FamilyCBapp_family f
         """)
 
         return db_cursor.fetchall()
@@ -24,7 +24,7 @@ def get_families():
 def member_form(request):
     if request.method == 'GET':
         families = get_families()
-        template = 'members/form.html'
+        template = 'members/members_form.html'
         context = {
             'all_families': families
         }
@@ -37,7 +37,7 @@ def member_edit_form(request, memberId):
         member = get_member(memberId)
         families = get_families()
         
-        template = 'members/form.html'
+        template = 'members/members_form.html'
         context = {
             'member': member,
             'all_families': families

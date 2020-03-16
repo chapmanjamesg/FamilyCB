@@ -18,7 +18,7 @@ def get_member(memberId):
             m.firstName,
             m.lastName,
             m.email,
-        FROM FamilyCB_member m
+        FROM FamilyCBapp_member m
         WHERE m.id = ?
         """, (memberId,))
 
@@ -29,7 +29,7 @@ def member_details(request, memberId):
     if request.method == 'GET':
         member = get_member(memberId)
 
-        template = 'members/detail.html'
+        template = 'members/member_detail.html'
         context = {
             'member': member
         }
