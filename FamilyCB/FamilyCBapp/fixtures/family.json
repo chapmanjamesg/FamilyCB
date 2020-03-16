@@ -7,7 +7,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "private"
+            "privacy": true
         }
     },
     {
@@ -18,7 +18,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "public"
+            "privacy": false
         }
     },
     {
@@ -29,7 +29,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "public"
+            "privacy": false
         }
     },
     {
@@ -40,7 +40,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "personal"
+            "privacy": true
         }
     },
     {
@@ -51,7 +51,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "private"
+            "privacy": true
         }
     },
     {
@@ -62,7 +62,7 @@
             "creator": 1,
             "memberId": [],
             "recipeId": [],
-            "privacy": "public"
+            "privacy": false
         }
     }
 ]

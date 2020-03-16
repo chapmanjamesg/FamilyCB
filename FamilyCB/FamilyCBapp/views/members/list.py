@@ -48,14 +48,20 @@ def list_members(request):
         return render(request, template_name, context)
     
     elif request.method == 'POST':
+        current_user = request.user
+        current_member_user = Member.objects.get(user_id=current_user)
         form_data = request.POST
 
         with sqlite3.connect(Connection.db_path) as conn:
             db_cursor = conn.cursor()
 
-            # db_cursor.execute("""
-            # # INSERT into FamilyCB_user
-            # # (
-
-            # # )
-            # # )
+            db_cursor.execute("""
+            INSERT into FamilyCB_user
+            (
+                name,
+                userId,
+            )
+            Values (?,?)
+            """,
+            (form_data['name'], current_user.id))
+        return redirect(reverse('FamilyCBapp:home'))
