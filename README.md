@@ -30,11 +30,10 @@
 
 * Populate your database with initial data from fixtures files: (_NOTE: every time you run this it will remove exisiting data and repopulate the tables_)
 
-  * `python manage.py loaddata order-product`
-  * `python manage.py loaddata order`
-  * `python manage.py loaddata payment_type`
-  * `python manage.py loaddata product_type`
-  * `python manage.py loaddata products`
+  * `python manage.py loaddata family`
+  * `python manage.py loaddata recipe`
+  * `python manage.py loaddata comment`
+  * `python manage.py loaddata ingredient`
 
 * Fire up your dev server and get to work!
 
