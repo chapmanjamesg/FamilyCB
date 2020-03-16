@@ -21,7 +21,7 @@ def list_members(request):
                 u.lastName,
                 u.email,
                 u.userName
-            from FamilyCB_member m 
+            from FamilyCBapp_member m 
             join auth_user u on m.userId = u.id
             """)
 

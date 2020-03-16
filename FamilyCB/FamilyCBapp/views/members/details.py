@@ -18,7 +18,7 @@ def get_member(memberId):
             m.firstName,
             m.lastName,
             m.email,
-        FROM FamilyCB_member m
+        FROM FamilyCBapp_member m
         WHERE m.id = ?
         """, (memberId,))
 

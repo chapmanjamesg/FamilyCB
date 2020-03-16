@@ -4,7 +4,7 @@ from FamilyCBapp.models import recipe
 from ..connection import Connection
 
 
-def department_list(request):
+def list_recipes(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
             conn.row_factory = sqlite3.Row
@@ -24,11 +24,11 @@ def department_list(request):
                 m.id as 'memberId'
             FROM FamilyCBapp_recipe r
             LEFT JOIN FamilyCBapp_comment c
-            Left JOIN FamilyCBapp_ingredient i
-            JOIN FamilyCBapp_member m
+            LEFT JOIN FamilyCBapp_ingredient i
+            LEFT JOIN FamilyCBapp_member m
             ON r.commentId = c.commentId
-            and r.ingredientId = i.ingredientId
-            and r.memberId = m.memberId
+            ON r.ingredientId = i.ingredientId
+            ON r.memberId = m.memberId
             """)
 
             all_recipes = []
