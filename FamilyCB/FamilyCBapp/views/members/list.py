@@ -39,7 +39,7 @@ def list_members(request):
 
                 all_members.append(mem)
 
-        template_name = 'members/list.html'
+        template_name = 'members/members_list.html'
 
         context = {
             'all_members': all_members

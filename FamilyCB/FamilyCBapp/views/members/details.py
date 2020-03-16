@@ -29,7 +29,7 @@ def member_details(request, memberId):
     if request.method == 'GET':
         member = get_member(memberId)
 
-        template = 'members/detail.html'
+        template = 'members/member_detail.html'
         context = {
             'member': member
         }
