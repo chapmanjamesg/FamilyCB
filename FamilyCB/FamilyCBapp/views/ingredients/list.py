@@ -1,10 +1,10 @@
 import sqlite3
 from django.shortcuts import render, redirect, reverse
-from FamilyCBapp.models import recipe
+from FamilyCBapp.models import Ingredient
 from ..connection import Connection
 
 
-def list_recipes(request):
+def list_ingredients(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
             conn.row_factory = sqlite3.Row
@@ -12,26 +12,15 @@ def list_recipes(request):
 
             db_cursor.execute("""
             SELECT
-                r.id,
-                r.name,
-                r.instruction,
-                r.servings,
-                r.memberId,
-                r.ingredientId,
-                r.commentId,
-                i.id as 'ingredientId'
-                c.id AS 'commentId'
-                m.id as 'memberId'
-            FROM FamilyCBapp_recipe r
-            LEFT JOIN FamilyCBapp_comment c
-            LEFT JOIN FamilyCBapp_ingredient i
-            LEFT JOIN FamilyCBapp_member m
-            ON r.commentId = c.commentId
-            ON r.ingredientId = i.ingredientId
-            ON r.memberId = m.memberId
+                i.id,
+                i.name,
+                i.instruction,
+                i.quantity
+                i.measurement
+            FROM FamilyCBapp_ingredient i
             """)
 
-            all_recipes = []
+            all_ingredients = []
             dataset = db_cursor.fetchall()
 
             # # creates a list of all unique department objects
@@ -61,12 +50,12 @@ def list_recipes(request):
             #     department.size = department_sizes[department.name]
 
         if request.user.is_authenticated:
-            template = 'recipes/recipe_list.html'
+            template = 'ingredients/ingredient_list.html'
         else:
-            template = 'recipes/recipe_list_view_only.html'
+            template = 'ingredients/ingredient_list_view_only.html'
 
         context = {
-            'recipes': all_recipes
+            'ingredients': all_ingredients
         }
 
         return render(request, template, context)
@@ -78,12 +67,12 @@ def list_recipes(request):
             db_cursor = conn.cursor()
 
             db_cursor.execute("""
-            INSERT into FamilyCBapp_recipe
+            INSERT into FamilyCBapp_ingredient
             (
-                name, instruction, servings
+                name, quantity, measurement
             )
             VALUES (?, ?, ?)
             """,
-            (form_data['name'], form_data['instructions'], form_data['servings']))
+            (form_data['name'], form_data['quantity'], form_data['measurement']))
 
-        return redirect(reverse('FamilyCBapp:recipe_list'))
+        return redirect(reverse('FamilyCBapp:ingredient_list'))
