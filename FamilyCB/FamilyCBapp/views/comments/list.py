@@ -12,13 +12,13 @@ def list_comments(request):
 
             db_cursor.execute("""
             SELECT
-                i.id,
-                i.comment,
-                i.memberId,
-                m.id
-            FROM FamilyCBapp_comment i
-            LEFT JOIN FamilyCBapp_member m 
-            ON i.memberId = m.id
+                c.id,
+                c.comment,
+                c.memberId,
+                r.commentId
+            FROM FamilyCBapp_comment c
+            LEFT JOIN FamilyCBapp_recipe r 
+            ON c.id = r.commentId
             """)
 
             all_comments = []

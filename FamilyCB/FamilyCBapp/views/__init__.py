@@ -15,3 +15,4 @@ from .ingredients.details import ingredient_details
 from .ingredients.form import ingredient_edit_form, ingredient_form
 
 from .comments.list import list_comments
+from .comments.details import comment_details
