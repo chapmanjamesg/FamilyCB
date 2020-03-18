@@ -13,3 +13,7 @@ from .recipes.form import recipe_edit_form, recipe_form
 from .ingredients.list import list_ingredients
 from .ingredients.details import ingredient_details
 from .ingredients.form import ingredient_edit_form, ingredient_form
+
+from .comments.list import list_comments
+from .comments.details import comment_details
+from .comments.form import comment_edit_form, comment_form
