@@ -50,11 +50,8 @@ def comment_details(request, commentId):
             comment_to_update = Comment.objects.get(pk=commentId)
 
             # reassign a property's value
-            comment_to_update.name = form_data['name']
-            comment_to_update.instruction = form_data['instruction']
-            comment_to_update.servings = form_data['servings']
-            comment_to_update.ingredientId = form_data['ingredientId']
-            comment_to_update.commentId = form_data['commentId']
+            comment_to_update.comment = form_data['comment']
+            comment_to_update.memberId = form_data['memberId']
 
             # save the change to the db
             comment_to_update.save()

@@ -36,3 +36,30 @@ def member_details(request, memberId):
         }
 
         return render(request, template, context)
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        if (
+            "actual_method" in form_data
+            and form_data["actual_mothod"] == "PUT"
+        ):
+            # retrieve it first
+            member_to_update = Member.objects.get(pk=memberId)
+
+            # reassign a property's value
+            member_to_update.firstName = form_data['firstName']
+            member_to_update.lastName = form_data['lastName']
+            member_to_update.email = form_data['email']
+
+            # save the change to the db
+            member_to_update.save()
+
+            return redirect(reverse('FamilyCBapp:members'))
+
+        if  ("actual_method" in form_data
+            and form_data["actual_mothod"] == "DELETE"
+        ):
+            member = Member.objects.get(pk=memberId)
+            member.delete()
+
+            return redirect(reverse('FamilyCBapp:members'))
