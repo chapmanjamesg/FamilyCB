@@ -8,21 +8,22 @@ from ..connection import Connection
 
 
 def get_member(memberId):
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Member)
-        db_cursor = conn.cursor()
+    # with sqlite3.connect(Connection.db_path) as conn:
+    #     conn.row_factory = model_factory(Member)
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        SELECT
-            m.id,
-            m.firstName,
-            m.lastName,
-            m.email,
-        FROM FamilyCBapp_member m
-        WHERE m.id = ?
-        """, (memberId,))
+    #     db_cursor.execute("""
+    #     SELECT
+    #         m.id,
+    #         m.firstName,
+    #         m.lastName,
+    #         m.email,
+    #     FROM FamilyCBapp_member m
+    #     WHERE m.id = ?
+    #     """, (memberId,))
 
-        return db_cursor.fetchone()
+    #     return db_cursor.fetchone()
+    return Member.objects.get(pk=memberId)
 
 @login_required
 def member_details(request, memberId):
