@@ -7,7 +7,7 @@ from FamilyCBapp.models import model_factory
 from ..connection import Connection
 
 
-def get_ingredients():
+def get_ingredient(ingredientId):
     # with sqlite3.connect(Connection.db_path) as conn:
     #     conn.row_factory = model_factory(Ingredient)
     #     db_cursor = conn.cursor()
@@ -27,7 +27,7 @@ def get_ingredients():
     #     """, (ingredientId,))
 
     #     return db_cursor.fetchone()
-    return Ingredient.objects.all()
+    return Ingredient.objects.get(pk=ingredientId)
 
 @login_required
 def ingredient_details(request, ingredientId):

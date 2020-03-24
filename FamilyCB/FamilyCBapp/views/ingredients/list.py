@@ -83,4 +83,4 @@ def ingredient_list(request):
         #     """,
         #     (form_data['name'], form_data['quantity'], form_data['measurement']))
 
-        return redirect(reverse('FamilyCBapp:ingredient_list'))
+        return redirect(reverse('ingredient_list'))

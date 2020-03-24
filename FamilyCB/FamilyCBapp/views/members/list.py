@@ -78,4 +78,4 @@ def member_list(request):
         #     Values (?,?)
         #     """,
         #     (form_data['name'], current_user.id))
-        return redirect(reverse('FamilyCBapp:home'))
+        return redirect(reverse('home'))

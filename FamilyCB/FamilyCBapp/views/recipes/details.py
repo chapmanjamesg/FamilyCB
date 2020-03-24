@@ -65,7 +65,7 @@ def recipe_details(request, recipeId):
             # save the change to the db
             recipe_to_update.save()
 
-            return redirect(reverse('FamilyCBapp:recipes'))
+            return redirect(reverse('recipes'))
 
         if  ("actual_method" in form_data
             and form_data["actual_mothod"] == "DELETE"
