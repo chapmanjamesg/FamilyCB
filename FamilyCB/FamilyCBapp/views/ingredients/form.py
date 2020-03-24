@@ -2,30 +2,31 @@ import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from FamilyCBapp.models import Ingredient, model_factory
-from .details import get_member
+# from .details import get_member
 from .details import get_ingredient
 from ..connection import Connection
 
 def get_ingredients():
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Ingredient)
-        db_cursor = conn.cursor()
+    # with sqlite3.connect(Connection.db_path) as conn:
+    #     conn.row_factory = model_factory(Ingredient)
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        SELECT
-            i.id,
-            i.name,
-            i.quantity,
-            i.measurement,
-            r.ingredientId
+    #     db_cursor.execute("""
+    #     SELECT
+    #         i.id,
+    #         i.name,
+    #         i.quantity,
+    #         i.measurement,
+    #         r.ingredientId
 
-        FROM FamilyCBapp_ingredient i
-        LEFT JOIN FamilyCBapp_ingredient r
-        ON  i.id = r.ingredientId
-        WHERE i.id = ?
-        """)
+    #     FROM FamilyCBapp_ingredient i
+    #     LEFT JOIN FamilyCBapp_ingredient r
+    #     ON  i.id = r.ingredientId
+    #     WHERE i.id = ?
+    #     """)
 
-        return db_cursor.fetchall()
+    #     return db_cursor.fetchall()
+    return Ingredient.objects.all()
 
 
 @login_required

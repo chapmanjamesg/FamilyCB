@@ -4,7 +4,7 @@ from FamilyCBapp.models import Ingredient
 from ..connection import Connection
 
 
-def ingredient(request):
+def ingredient_list(request):
     if request.method == 'GET':
         # with sqlite3.connect(Connection.db_path) as conn:
         #     conn.row_factory = sqlite3.Row
@@ -83,4 +83,4 @@ def ingredient(request):
         #     """,
         #     (form_data['name'], form_data['quantity'], form_data['measurement']))
 
-        return redirect(reverse('FamilyCBapp:ingredient_list'))
+        return redirect(reverse('ingredient_list'))

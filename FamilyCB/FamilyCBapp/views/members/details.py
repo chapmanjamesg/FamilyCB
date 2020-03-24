@@ -2,8 +2,8 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from FamilyCB.models import Member, Family
-from FamilyCB.models import model_factory
+from FamilyCBapp.models import Member
+from FamilyCBapp.models import model_factory
 from ..connection import Connection
 
 
@@ -54,7 +54,7 @@ def member_details(request, memberId):
             # save the change to the db
             member_to_update.save()
 
-            return redirect(reverse('FamilyCBapp:members'))
+            return redirect(reverse('members'))
 
         if  ("actual_method" in form_data
             and form_data["actual_mothod"] == "DELETE"
@@ -62,4 +62,4 @@ def member_details(request, memberId):
             member = Member.objects.get(pk=memberId)
             member.delete()
 
-            return redirect(reverse('FamilyCBapp:members'))
+            return redirect(reverse('members'))

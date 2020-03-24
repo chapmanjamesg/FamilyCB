@@ -12,7 +12,7 @@ class Member(models.Model):
     # firstName = models.CharField(max_length=255, null=True)
     # lastName = models.CharField(max_length=50, null=True)
     # email = models.models.EmailField(max_length=254)
-    familyId = models.ForeignKey("Family", verbose_name=("Families"), on_delete=models.CASCADE, null=True)
+    # familyId = models.ForeignKey("Family", verbose_name=("Families"), on_delete=models.CASCADE, null=True)
     
 
 

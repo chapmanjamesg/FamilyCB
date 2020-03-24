@@ -87,4 +87,4 @@ def comment_list(request):
         #     """,
         #     (form_data['comment'], form_data['memberId']))
 
-        return redirect(reverse('FamilyCBapp:comment_list'))
+        return redirect(reverse('comment_list'))

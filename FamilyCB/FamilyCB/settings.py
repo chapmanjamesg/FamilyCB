@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'safedelete',
-    'FamilyCBProject',
+    'FamilyCBapp',
 ]
 
 REST_FRAMEWORK = {
@@ -70,7 +70,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://127.0.0.1:3000'
 )
 
-ROOT_URLCONF = 'FamilyCB.urls'
+ROOT_URLCONF = 'FamilyCBapp.urls'
 
 TEMPLATES = [
     {
@@ -139,3 +139,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/recipes'

@@ -1,5 +1,6 @@
 from .home import home
 from .auth.logout import logout_user
+from .auth.register import register_user
 
 from .members.list import member_list
 from .members.details import member_details

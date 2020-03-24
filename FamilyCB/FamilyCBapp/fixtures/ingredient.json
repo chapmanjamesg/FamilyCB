@@ -1,6 +1,6 @@
 [
     {
-        "model": "FamilyCBProject.ingredient",
+        "model": "FamilyCBapp.ingredient",
         "pk": 1,
         "fields": {
             "name": "Chicken Breast",
@@ -9,7 +9,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.ingredient",
+        "model": "FamilyCBapp.ingredient",
         "pk": 2,
         "fields": {
             "name": "cayenne pepper",
@@ -18,7 +18,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.ingredient",
+        "model": "FamilyCBapp.ingredient",
         "pk": 3,
         "fields": {
             "name": "Garlic",
