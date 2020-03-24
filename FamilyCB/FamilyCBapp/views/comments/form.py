@@ -6,24 +6,25 @@ from .details import get_comment
 from ..connection import Connection
 
 def get_comments():
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Comment)
-        db_cursor = conn.cursor()
+    # with sqlite3.connect(Connection.db_path) as conn:
+    #     conn.row_factory = model_factory(Comment)
+    #     db_cursor = conn.cursor()
 
-        db_cursor.execute("""
-        SELECT
-            c.id,
-            c.comment,
-            c.memberId,
-            r.commentId
+    #     db_cursor.execute("""
+    #     SELECT
+    #         c.id,
+    #         c.comment,
+    #         c.memberId,
+    #         r.commentId
 
-        FROM FamilyCBapp_comment c
-        LEFT JOIN FamilyCBapp_comment r
-        ON  c.id = r.commentId
-        WHERE c.id = ?
-        """)
+    #     FROM FamilyCBapp_comment c
+    #     LEFT JOIN FamilyCBapp_comment r
+    #     ON  c.id = r.commentId
+    #     WHERE c.id = ?
+    #     """)
 
-        return db_cursor.fetchall()
+    #     return db_cursor.fetchall()
+    return Comment.objects.all()
 
 
 @login_required

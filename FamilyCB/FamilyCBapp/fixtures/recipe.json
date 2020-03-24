@@ -1,6 +1,6 @@
 [
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 1,
         "fields": {
             "name": "Baked Chicken",
@@ -12,7 +12,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 2,
         "fields": {
             "name": "Seared Steak",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 3,
         "fields": {
             "name": "Baked Potato",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 4,
         "fields": {
             "name": "Roasted Vegetables",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 5,
         "fields": {
             "name": "Rice",
@@ -60,7 +60,7 @@
         }
     },
     {
-        "model": "FamilyCBProject.recipe",
+        "model": "FamilyCBapp.recipe",
         "pk": 6,
         "fields": {
             "name": "Scrambled Eggs",

@@ -102,4 +102,4 @@ def recipe_list(request):
             # """,
             # (form_data['name'], form_data['instructions'], form_data['servings']))
 
-        return redirect(reverse('FamilyCBapp:recipe_list'))
+        return redirect(reverse('recipe_list'))

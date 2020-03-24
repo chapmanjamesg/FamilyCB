@@ -2,12 +2,12 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from FamilyCB.models import Ingredient
-from FamilyCB.models import model_factory
+from FamilyCBapp.models import Ingredient
+from FamilyCBapp.models import model_factory
 from ..connection import Connection
 
 
-def get_ingredient(ingredientId):
+def get_ingredients():
     # with sqlite3.connect(Connection.db_path) as conn:
     #     conn.row_factory = model_factory(Ingredient)
     #     db_cursor = conn.cursor()
@@ -27,7 +27,7 @@ def get_ingredient(ingredientId):
     #     """, (ingredientId,))
 
     #     return db_cursor.fetchone()
-    return Ingredient.objects.get(pk=ingredientId)
+    return Ingredient.objects.all()
 
 @login_required
 def ingredient_details(request, ingredientId):
@@ -59,7 +59,7 @@ def ingredient_details(request, ingredientId):
             # save the change to the db
             ingredient_to_update.save()
 
-            return redirect(reverse('FamilyCBapp:ingredients'))
+            return redirect(reverse('ingredients'))
 
         if  ("actual_method" in form_data
             and form_data["actual_mothod"] == "DELETE"
@@ -67,4 +67,4 @@ def ingredient_details(request, ingredientId):
             ingredient = Ingredient.objects.get(pk=ingredientId)
             ingredient.delete()
 
-            return redirect(reverse('FamilyCBapp:ingredients'))
+            return redirect(reverse('ingredients'))

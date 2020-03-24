@@ -14,15 +14,16 @@
   <h1 class="mt2 mb0 baskerville i fw1 f1">FamilyCB</h1>
     <nav id="site-nav" class="bt bb tc mw10 center mt4">
         {% comment %} <ol class="navList"> {% endcomment %}
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'FamilyCBapp:home' %}">Home</a>
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'FamilyCBapp:recipe' %}">recipe</a>
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'FamilyCBapp:member' %}">Account</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'home'  %}">Home</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'recipes' %}">Recipe</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'members' %}">Account</a>
             {% comment %} <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'hrapp:computers' %}">Computers</a>
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'hrapp:training_list' %}">Training Programs</a> {% endcomment %}
             {% if request.user.is_authenticated %}
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'FamilyCBapp:logout' %}">Logout</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'logout' %}">Logout</a>
             {% else %}
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'FamilyCBapp:login' %}">Login</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'login' %}">Login</a>
+            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'register' %}">Register</a>
             {% endif %}
         {% comment %} </ol> {% endcomment %}
     </nav>

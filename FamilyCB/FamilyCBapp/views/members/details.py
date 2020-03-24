@@ -2,8 +2,8 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from FamilyCB.models import Member, Family
-from FamilyCB.models import model_factory
+from FamilyCBapp.models import Member
+from FamilyCBapp.models import model_factory
 from ..connection import Connection
 
 

@@ -2,7 +2,7 @@ import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from FamilyCBapp.models import Ingredient, model_factory
-from .details import get_member
+# from .details import get_member
 from .details import get_ingredient
 from ..connection import Connection
 

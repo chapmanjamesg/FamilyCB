@@ -1,7 +1,7 @@
 import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from FamilyCBapp.models import Member, Family, model_factory
+from FamilyCBapp.models import Member, model_factory
 from .details import get_member
 from ..connection import Connection
 

@@ -2,8 +2,8 @@ import sqlite3
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from FamilyCB.models import Recipe
-from FamilyCB.models import model_factory
+from FamilyCBapp.models import Recipe
+from FamilyCBapp.models import model_factory
 from ..connection import Connection
 
 
@@ -73,5 +73,5 @@ def recipe_details(request, recipeId):
             recipe = Recipe.objects.get(pk=recipeId)
             recipe.delete()
 
-            return redirect(reverse('FamilyCBapp:recipes'))
+            return redirect(reverse('recipes'))
 

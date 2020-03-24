@@ -1,7 +1,7 @@
 import sqlite3
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from FamilyCB.models import Member
+from FamilyCBapp.models import Member
 from ..connection import Connection
 from django.contrib.auth.decorators import login_required
 
