@@ -27,10 +27,12 @@
 * Create a superuser for your local version of the app:
 
   * `python manage.py createsuperuser`
+* If you get this message `Superuser creation skipped due to not running in a TTY. You can run `manage.py createsuperuser` in your project to create one manually.`
 
-* Populate your database with initial data from fixtures files: (_NOTE: every time you run this it will remove exisiting data and repopulate the tables_)
+  *`winpty python manage.py createsuperuser`
 
-  * `python manage.py loaddata family`
+* Populate your database with initial data from fixtures files: (_NOTE: every time you run this it will remove existing data and repopulate it) 
+
   * `python manage.py loaddata recipe`
   * `python manage.py loaddata comment`
   * `python manage.py loaddata ingredient`
