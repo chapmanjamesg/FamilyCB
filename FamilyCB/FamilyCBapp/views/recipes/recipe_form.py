@@ -35,7 +35,7 @@ def get_recipes():
 @login_required
 def recipe_form(request):
     if request.method == 'GET':
-        recipes = get_recipe()
+        recipes = get_recipes()
         template = 'recipes/recipes_form.html'
         context = {
             'all_recipes': recipes
