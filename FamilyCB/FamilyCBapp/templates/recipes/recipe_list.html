@@ -1,0 +1,26 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %} code block goes here {% endcomment %}
+<article class="pa1 pa1-ns">
+<h1 class="f4 bold tc center mw6">Recipes</h1>
+
+<ol class="list pl0 ml0 center mw6 ba b--light-silver br2">
+{% for recipe in recipes %}
+    <li class="ph3 pv3 bb b--light-silver">
+        <p><a href="{% url 'recipe_details' recipe.id %}">{{ recipe.name }}</a></p>
+        <p>Instructions: {{ recipe.instruction }}</p>
+        <p>Servings: {{ recipe.servings }}</p>
+        <p>Ingredients: {{ recipe.ingredient.name }}</p>
+        <p>Quantity: {{ ingredient.quantity }}</p>
+        <p>Measurement: {{ ingredient.measurement }}</p>
+    </li>
+{% endfor %}
+</ol>
+ </article>
+<div class="flex items-center justify-center">
+<form action="{% url 'recipe_form' %}"><button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Recipe</button></form>
+</div>
+
+{% endblock %}

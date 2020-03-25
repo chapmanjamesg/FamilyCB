@@ -1,0 +1,41 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %} code block goes here {% endcomment %}
+    <h1>Your Recipe</h1>
+
+    <form action="{% url 'recipe_list' %}" method="post">
+        <fieldset>
+            <label for="name">Name: </label>
+            <input id="name" type="text" name="name" value={{ recipe.name }}>
+        </fieldset>
+
+        <fieldset>
+            <label for="instruction">Instructions: </label>
+            <input id="instructions" type="text" name="instructions" value={{ recipe.instruction }}>
+        </fieldset>
+
+        <fieldset>
+            <label for="servings">Servings: </label>
+            <input id="servings" type="number" name="servings" value={{ recipe.servings }}>
+        </fieldset>
+
+
+        <fieldset>
+            <label for="ingredient">Ingredients: </label>
+            <label for="ingredient">Name: </label>
+            <input id="ingredient_name" type="text" name="ingredient_name" value={{ ingredient.name }}>
+            <label for="ingredient">Quantity: </label>
+            <input id="ingredient_quantity" type="number" name="ingredient_quantity" value={{ ingredient.quantity }}>
+            <label for="ingredient">Measurement: </label>
+            <input id="ingredient_measurement" type="text" name="ingredient_measurement" value={{ ingredient.measurement }}>
+        </fieldset>
+
+
+        <input type="submit" value="Submit" />
+
+    </form>
+
+
+{% endblock %}
