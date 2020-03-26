@@ -8,7 +8,7 @@ class Recipe(models.Model):
     ingredientId = models.ManyToManyField("Ingredient", verbose_name=("ingredients"))
     instruction = models.CharField(max_length=1000)
     commentId = models.ManyToManyField("Comment", verbose_name=("Comments"))
-    memberId = models.ForeignKey("Member", on_delete=models.CASCADE)
+    member = models.ForeignKey("Member", on_delete=models.CASCADE)
     servings = models.IntegerField()
 
 

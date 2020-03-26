@@ -5,7 +5,9 @@
 {% comment %} code block goes here {% endcomment %}
     <h1>Your Recipe</h1>
 
-    <form action="{% url 'recipe_list' %}" method="post">
+    <form action="{% url 'home' %}" method="POST">
+
+        {% csrf_token %}
         <fieldset>
             <label for="name">Name: </label>
             <input id="name" type="text" name="name" value={{ recipe.name }}>
@@ -22,15 +24,22 @@
         </fieldset>
 
 
-        <fieldset>
-            <label for="ingredient">Ingredients: </label>
+        <form action="{% url 'ingredient_list' %}" method='POST'>
+            {% csrf_token %}
+            <h3 for="ingredient">Ingredients: </h3>
+            {% for ingredient in ingredients %}
+                <a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}: {{ ingredient.quantity }} {{ingredient.measurement}}</a>
+            {% endfor %}
             <label for="ingredient">Name: </label>
             <input id="ingredient_name" type="text" name="ingredient_name" value={{ ingredient.name }}>
+            </br>
             <label for="ingredient">Quantity: </label>
             <input id="ingredient_quantity" type="number" name="ingredient_quantity" value={{ ingredient.quantity }}>
+            </br>
             <label for="ingredient">Measurement: </label>
             <input id="ingredient_measurement" type="text" name="ingredient_measurement" value={{ ingredient.measurement }}>
-        </fieldset>
+            <input type="button" value="Add ingredient" />
+        </form>
 
 
         <input type="submit" value="Submit" />

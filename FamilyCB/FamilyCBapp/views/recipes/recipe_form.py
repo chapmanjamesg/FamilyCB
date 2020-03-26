@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from FamilyCBapp.models import Recipe, model_factory
 # from .details import get_member
-from .details import get_recipe
+from .recipe_details import get_recipe
 from ..connection import Connection
 
 def get_recipes():

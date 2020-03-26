@@ -4,9 +4,9 @@
         "pk": 1,
         "fields": {
             "name": "Baked Chicken",
-            "ingredientId": [],
+            "ingredientId": [1,2,3],
             "instruction": "Season the chicken well on both sides. Place on a baking sheets, and cook for 45 minutes or until the inner tempature is 165 degrees",
-            "commentId": [],
+            "commentId": [1],
             "memberId": 1,
             "servings": 4
         }
@@ -16,9 +16,9 @@
         "pk": 2,
         "fields": {
             "name": "Seared Steak",
-            "ingredientId": [],
+            "ingredientId": [1,2,3],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
-            "commentId": [],
+            "commentId": [2],
             "memberId": 1,
             "servings": 4
         }
@@ -28,9 +28,9 @@
         "pk": 3,
         "fields": {
             "name": "Baked Potato",
-            "ingredientId": [],
+            "ingredientId": [1,2,3],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
-            "commentId": [],
+            "commentId": [3],
             "memberId": 1,
             "servings": 4
         }
@@ -40,9 +40,9 @@
         "pk": 4,
         "fields": {
             "name": "Roasted Vegetables",
-            "ingredientId": [],
+            "ingredientId": [1,2,3],
             "instruction": "Salt and pepper the steak six hours prior to cooking. set oven temp. to 200 and cook the steaks in there till the internal temp is 120. Sear both sides for 45 second on a both sides on a cast iron pan at 600 degrees",
-            "commentId": [],
+            "commentId": [4],
             "memberId": 1,
             "servings": 4
         }

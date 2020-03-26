@@ -3,5 +3,14 @@
 {% block content %}
 
 {% comment %} code block goes here {% endcomment %}
+<article class="pa1 pa1-ns">
+<h1 class="f4 bold tc center mw6">Ingredients</h1>
 
+<ol class="list pl0 ml0 center mw6 ba b--light-silver br2">
+{% for ingredient in ingredients %}
+    <li class="ph3 pv3 bb b--light-silver">
+        <p><a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}</a>: {{ ingredient.quantity }} {{ ingredient.measurement }}</p>
+
+    </li>
+{% endfor %}
 {% endblock %}
