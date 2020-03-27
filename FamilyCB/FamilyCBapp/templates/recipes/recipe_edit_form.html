@@ -3,7 +3,7 @@
 {% block content %}
 
 {% comment %} code block goes here {% endcomment %}
-    <h1>Your Recipe</h1>
+    <h1>Edit This Recipe</h1>
 
     <form action="{% url 'recipe_details' recipe.id %}" method="POST">
 
@@ -15,7 +15,7 @@
 
         <fieldset>
             <label for="instruction">Instructions: </label>
-            <input id="instruction" type="textbox" name="instruction" value={{ recipe.instruction }}>
+            <input id="instruction" type="text" name="instruction" value={{ recipe.instruction }}>
         </fieldset>
 
         <fieldset>
@@ -25,7 +25,7 @@
 
         <fieldset>
             <label for="ingredient">Ingredients: </label>
-            <input id="ingredient" type="textbox" name="ingredient" value={{ recipe.ingredient }}>
+            <input id="ingredient" type="text" name="ingredient" value={{ recipe.ingredient }}>
         </fieldset>
 
         {% comment %} <form action="{% url 'ingredient_list' %}" method='POST'>
@@ -46,7 +46,7 @@
         </form>  {% endcomment %}
 
         <input type="hidden" name="actual_method" value='PUT'>
-        <button type="button">Edit</button>
+        <input type="submit" value="Edit" />
 
     </form>
 

@@ -49,7 +49,7 @@ def recipe_edit_form(request, recipeId):
         recipe = get_recipe(recipeId)
         recipes = get_recipes()
         
-        template = 'recipes/recipes_form.html'
+        template = 'recipes/recipe_edit_form.html'
         context = {
             'recipe': recipe,
             'all_recipes': recipes
