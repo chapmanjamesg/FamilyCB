@@ -2,7 +2,7 @@ import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from FamilyCBapp.models import Comment, model_factory
-from .details import get_comment
+from .comment_details import get_comment
 from ..connection import Connection
 
 def get_comments():

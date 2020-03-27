@@ -3,5 +3,21 @@
 {% block content %}
 
 {% comment %} code block goes here {% endcomment %}
+<article class="pa1 pa1-ns">
+<h1 class="f4 bold tc center mw6">Comments</h1>
+
+<ol class="list pl0 ml0 center mw6 ba b--light-silver br2">
+{% for comment in comments %}
+    <li class="ph3 pv3 bb b--light-silver">
+        <p><a href="{% url 'comment_details' comment.id %}">{{ comment.name }}</a></p>
+        <p>Comment: {{ comment.comment }}</p>
+        <p>Member: {{ member.firstName }}{{member.lastName}}</p>
+    </li>
+{% endfor %}
+</ol>
+ </article>
+<div class="flex items-center justify-center">
+<form action="{% url 'comment_form' %}"><button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Comment</button></form>
+</div>
 
 {% endblock %}

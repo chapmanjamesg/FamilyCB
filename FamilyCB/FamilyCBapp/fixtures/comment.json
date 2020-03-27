@@ -22,5 +22,13 @@
             "comment": "This goes great with a cheese sauce",
             "memberId": 1
         }
+    },
+    {
+        "model": "FamilyCBapp.comment",
+        "pk": 4,
+        "fields": {
+            "comment": "This is an awesome dish",
+            "memberId": 1
+        }
     }
 ]
