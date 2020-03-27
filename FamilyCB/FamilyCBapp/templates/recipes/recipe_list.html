@@ -11,13 +11,13 @@
         <p><a href="{% url 'recipe_details' recipe.id %}">{{ recipe.name }}</a></p>
         <p>Instructions: {{ recipe.instruction }}</p>
         <p>Servings: {{ recipe.servings }}</p>
-        <div>Ingredients:
-            <li class="ph3 pv3 bb b--light-silver">
-                {% for ingredient in ingredients %}
-                    <a href="{% url 'ingredient_details' ingredient.id recipe.id %}">{{ ingredient.name }}:  {{ ingredient.quantity }} {{ ingredient.measurement }}</a>
+        <p>Ingredients: {{recipe.ingredient}}
+            {% comment %} <li class="ph3 pv3 bb b--light-silver">
+                {% for ingredient in recipe.recipe_ingredientId_set.ingredient_set %}
+                    <a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}:  {{ ingredient.quantity }} {{ ingredient.measurement }}</a>
                 {% endfor %}
-            </li>
-        </div>
+            </li> {% endcomment %}
+        </p>
     </li>
 {% endfor %}
 {% if request.user.is_authenticated %}   

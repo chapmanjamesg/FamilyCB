@@ -47,8 +47,8 @@ def recipe_list(request,):
             name = form_data['name'],
             instruction = form_data['instruction'],
             servings = form_data['servings'],
-            ingredientId = form_data['ingredientId'],
-            commentId = form_data['commentId']
+            ingredient = form_data['ingredient'],
+            member_id = request.user.member.id
         )
         new_recipe.save()
 

@@ -18,7 +18,7 @@
             {% if request.user.is_authenticated %}
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'my_recipe' %}">My Recipes</a>
             {% endif %}
-            <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'ingredient_list' %}">Ingredients</a>
+            {% comment %} <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'ingredient_list' %}">Ingredients</a> {% endcomment %}
             {% comment %} <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'member_list' %}">Contributers</a> {% endcomment %}
             {% comment %} <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'hrapp:computers' %}">Computers</a>
             <a class="navList__route f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="{% url 'hrapp:training_list' %}">Training Programs</a> {% endcomment %}

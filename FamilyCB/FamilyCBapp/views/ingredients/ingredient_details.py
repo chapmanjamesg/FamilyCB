@@ -9,25 +9,7 @@ from ..connection import Connection
 
 
 def get_ingredient(ingredientId):
-    # with sqlite3.connect(Connection.db_path) as conn:
-    #     conn.row_factory = model_factory(Ingredient)
-    #     db_cursor = conn.cursor()
 
-    #     db_cursor.execute("""
-    #     SELECT
-    #         i.id,
-    #         i.name,
-    #         i.quantity,
-    #         i.measurement,
-    #         r.ingredientId
-
-    #     FROM FamilyCBapp_ingredient i
-    #     LEFT JOIN FamilyCBapp_ingredient r
-    #     ON  i.id = r.ingredientId
-    #     WHERE i.id = ?
-    #     """, (ingredientId,))
-
-    #     return db_cursor.fetchone()
     return Ingredient.objects.get(pk=ingredientId)
 
 
@@ -35,7 +17,7 @@ def get_ingredient(ingredientId):
 def ingredient_details(request, ingredientId, recipeId):
     if request.method == 'GET':
 
-        recipe_ingredient = Ingredient.objects.filter(ingredient_id=ingredientId, recipe_id=recipeId)
+        ingredient = get_ingredient(ingredientId)
 
         template = 'ingredients/ingredient_detail.html'
         context = {

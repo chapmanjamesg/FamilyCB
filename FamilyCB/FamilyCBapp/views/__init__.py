@@ -9,6 +9,8 @@ from .members.member_form import member_edit_form, member_form
 from .recipes.recipe_list import recipe_list, my_recipe
 from .recipes.recipe_details import recipe_details
 from .recipes.recipe_form import recipe_edit_form, recipe_form
+from .recipes.recipe_delete import recipe_delete
+from .recipes.recipe_edit import recipe_edit
 
 
 from .ingredients.ingredient_list import ingredient_list

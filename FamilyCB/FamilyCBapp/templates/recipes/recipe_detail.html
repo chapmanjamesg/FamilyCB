@@ -2,6 +2,29 @@
 {% load static %}
 {% block content %}
 
-{% comment %} code block goes here {% endcomment %}
+    <section id="recipe-details">
+    <h1>{{ recipe.name }}</h1>
+    <ol>
+        <li>Instructions: {{ recipe.instruction }}</li>
+        <li>Ingredients: {{ recipe.ingredient}} </li>
+        <li>servings: {{ recipe.servings}} </li>
+    </ol>
+</section>
+    {% if recipe.member_id == request.user.member.id %}
+    <form action="{% url 'recipe_delete' recipe.id %}" method="GET">
+    {% csrf_token %}
+       <button>Delete</button>
+    </form> 
+    <form action="{% url 'recipe_edit_form' recipe.id %}" method="GET">
+    {% csrf_token %}
+        <button>Edit</button>
+    </form>
+    {% else%}
+    <div> This is not your recipe. </div>
+    {% endif %}
+
+    
+    
+
 
 {% endblock %}

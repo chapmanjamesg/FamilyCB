@@ -14,6 +14,7 @@ urlpatterns = [
     path('recipes/form', recipe_form, name='recipe_form'),
     path('recipes/<int:recipeId>/', recipe_details, name='recipe_details'),
     path('recipes/<int:recipeId>/form/', recipe_edit_form, name='recipe_edit_form'),
+    path('recipes/delete/<int:recipeId>', recipe_delete, name='recipe_delete'),
 
     path('members/', member_list, name='member_list'),
     path('member/form', member_form, name='member_form'),
