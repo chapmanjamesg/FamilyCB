@@ -34,7 +34,7 @@ def recipe_details(request, recipeId):
         ):
             # retrieve it first
             recipe_to_update = Recipe.objects.get(pk=recipeId)
-
+            print('test')
             # reassign a property's value
             recipe_to_update.name = form_data['name']
             recipe_to_update.instruction = form_data['instruction']
@@ -45,14 +45,14 @@ def recipe_details(request, recipeId):
             # save the change to the db
             recipe_to_update.save()
 
-            return redirect(reverse('home'))
+            return redirect(reverse('my_recipe'))
 
-        elif  ("actual_method" in form_data
+        if  ("actual_method" in form_data
             and form_data["actual_method"] == "DELETE"
         ):
             recipe = Recipe.objects.get(pk=recipeId)
             print('test', recipe)
             recipe.delete()
 
-            return redirect(reverse('home'))
+            return redirect(reverse('my_recipe'))
 
