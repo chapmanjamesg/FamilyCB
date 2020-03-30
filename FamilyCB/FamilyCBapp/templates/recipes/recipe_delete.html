@@ -1,18 +1,21 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-
-<section id="recipe-delete">
-  <h2>Are you sure you want to delete this recipe?</h2>
-  <form action="{% url 'recipe_details' recipeId %}" method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="actual_method" value="DELETE">
-    <button>Delete</button>
-  </form> 
-  <form action="{% url 'recipe_details' recipeId %}" method="GET">
-    {% csrf_token %}
-    <button>Nevermind</button>
-  </form> 
-</section>
+<div class="pl0 ml0 center mw6 ba b--light-red br2 light-red">
+  <section id="recipe-delete">
+    <div class="flex items-center justify-center">
+    <h2>Are you sure you want to delete this recipe?</h2>
+      <form action="{% url 'recipe_details' recipeId %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="actual_method" value="DELETE" >
+        <button class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">Delete</button>
+      </form> 
+      <form action="{% url 'recipe_details' recipeId %}" method="GET">
+        {% csrf_token %}
+        <button class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">Nevermind</button>
+      </form> 
+    </div>
+  </section>
+</div>
     
 {% endblock %}

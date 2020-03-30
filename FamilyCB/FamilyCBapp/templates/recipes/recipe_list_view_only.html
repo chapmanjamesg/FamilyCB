@@ -3,16 +3,18 @@
 {% block content %}
 
 {% comment %} code block goes here {% endcomment %}
-<article class="pa1 pa1-ns">
+<article class="pa1 pa1-ns light-red">
 <h1 class="f4 bold tc center mw6">Recipes</h1>
 
-<ol class="list pl0 ml0 center mw6 ba b--light-silver br2">
+<ol class="list pl0 ml0 center mw6 ba b--light-red br2">
 {% for recipe in recipes %}
-    <li class="ph3 pv3 bb b--light-silver">
-        <p><a href="{% url 'recipe_details' recipe.id %}">{{ recipe.name }}</a></p>
+    <li class="ph3 pv3 bb b--light-red">
+        <div class="flex item-center justify-center">
+            <h3><a href="{% url 'recipe_details' recipe.id %}">{{ recipe.name }}</a></h3>
+        </div>
+        <p>Ingredients: {{recipe.ingredient}}
         <p>Instructions: {{ recipe.instruction }}</p>
         <p>Servings: {{ recipe.servings }}</p>
-        <p>Ingredients: {{recipe.ingredient}}
             {% comment %} <li class="ph3 pv3 bb b--light-silver">
                 {% for ingredient in recipe.recipe_ingredientId_set.ingredient_set %}
                     <a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}:  {{ ingredient.quantity }} {{ ingredient.measurement }}</a>
