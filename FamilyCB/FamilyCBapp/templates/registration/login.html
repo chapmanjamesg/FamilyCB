@@ -1,12 +1,15 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
-
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+<div class="list pl0 ml0 center mw6 ba b--light-silver br2 light-red">
+    <h2 class="flex item-center justify-center">Login</h2>
+        <div class="flex item-center justify-center">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="flex item-center justify-center" type="submit">Login</button>
+                </form>
+        </div>
+</div>
 
 {% endblock %}

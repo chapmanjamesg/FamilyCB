@@ -64,5 +64,16 @@
             "member": 1,
             "servings": 4
         }
+    },
+    {
+        "model": "FamilyCBapp.recipe",
+        "pk": 7,
+        "fields": {
+            "name": "Chip Dip",
+            "ingredient": "Sour Cream: 2 cups, Soy Sauce: 1 tbs, Wostisher Sauce: 1 tsp, Tobasco: 1 tsp, Garlic Powder: 2 tsp, Ground Pepper: 1 tsp",
+            "instruction": "Mix the sour cream, soy sauce, wostishire sauce, tabasco sauce, garlic powder, and ground pepper together till everything is combined.",
+            "member": 2,
+            "servings": 10
+        } 
     }
 ]

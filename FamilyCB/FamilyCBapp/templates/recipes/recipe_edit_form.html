@@ -3,29 +3,32 @@
 {% block content %}
 
 {% comment %} code block goes here {% endcomment %}
-    <h1>Edit This Recipe</h1>
-
-    <form action="{% url 'recipe_details' recipe.id %}" method="POST">
+<div class="pl0 ml0 center mw6 ba b--light-red br2 light-red">
+    <div class="flex item-center justify-center">
+        <h1>Edit Recipe</h1>
+    </div>
+    <form action="{% url 'recipe_details' recipe.id %}" method="POST" >
 
         {% csrf_token %}
-        <fieldset>
+
+        <fieldset class="b--light-red">
             <label for="name">Name: </label>
-            <input id="name" type="text" name="name" value={{ recipe.name }}>
+            <input id="name" type="text" name="name" value={{ recipe.name }} class="light-red bg-washed-yellow b--light-red">
         </fieldset>
 
-        <fieldset>
-            <label for="instruction">Instructions: </label>
-            <input id="instruction" type="text" name="instruction" value={{ recipe.instruction }}>
-        </fieldset>
-
-        <fieldset>
-            <label for="servings">Servings: </label>
-            <input id="servings" type="number" name="servings" value={{ recipe.servings }}>
-        </fieldset>
-
-        <fieldset>
+        <fieldset class="b--light-red">
             <label for="ingredient">Ingredients: </label>
-            <input id="ingredient" type="text" name="ingredient" value={{ recipe.ingredient }}>
+            <input id="ingredient" type="textarea" name="ingredient" value={{ recipe.ingredient }} class="light-red bg-washed-yellow b--light-red">
+        </fieldset>
+
+        <fieldset class="b--light-red">
+            <label for="instruction">Instructions: </label>
+            <input id="instruction" type="textarea" name="instruction" value={{ recipe.instruction }} class="light-red bg-washed-yellow b--light-red">
+        </fieldset class="b--light-red">
+
+        <fieldset class="b--light-red">
+            <label for="servings">Servings: </label>
+            <input id="servings" type="number" name="servings" value={{ recipe.servings }} class="light-red bg-washed-yellow b--light-red">
         </fieldset>
 
         {% comment %} <form action="{% url 'ingredient_list' %}" method='POST'>
@@ -44,11 +47,12 @@
             <input id="ingredient_measurement" type="text" name="ingredient_measurement" value={{ ingredient.measurement }}>
             <input type="submit" value="Add ingredient" />
         </form>  {% endcomment %}
-
-        <input type="hidden" name="actual_method" value='PUT'>
-        <input type="submit" value="Edit" />
+        <div class="flex items-center justify-center">
+            <input type="hidden" name="actual_method" value='PUT'>
+            <input type="submit" value="Edit" class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">
+        </div>
 
     </form>
-
+</div>
 
 {% endblock %}

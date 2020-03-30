@@ -1,30 +1,32 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="tc">Welcome to FamilyCB!</h1>
-<article class="pa1 pa1-ns">
-<h2 class="f4 bold tc center mw6">Recipes</h2>
+<h1 class="tc light-red">Welcome to FamilyCB!</h1>
+<article class="pa1 pa1-ns light-red">
+    <h2 class="f4 bold tc center mw6">Recipes</h2>
 
-<ol class="list pl0 ml0 center mw6 ba b--light-silver br2">
-{% for recipe in recipes %}
-    <li class="ph3 pv3 bb b--light-silver">
-        <p><a href="{% url 'recipe_details' recipe.id %}">{{ recipe.name }}</a></p>
-        <p>Instructions: {{ recipe.instruction }}</p>
-        <p>Servings: {{ recipe.servings }}</p>
-        <p>Ingredients: {{recipe.ingredient}}
-            {% comment %} <li class="ph3 pv3 bb b--light-silver">
-                {% for ingredient in recipe.recipe_ingredientId_set.ingredient_set %}
-                    <a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}:  {{ ingredient.quantity }} {{ ingredient.measurement }}</a>
-                {% endfor %}
-            </li> {% endcomment %}
-        </p>
-    </li>
-{% endfor %}
-{% if request.user.is_authenticated %}   
-</ol>
- </article>
-<div class="flex items-center justify-center">
-<form action="{% url 'recipe_form' %}"><button class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box mr4">Add Recipe</button></form>
-</div>
+    <ol class="list pl0 ml0 center mw6 ba b--light-red br2">
+    {% for recipe in recipes %}
+        <li class="ph3 pv3 bb b--light-silver">
+            <div class="flex item-center justify-center">
+                <h4><a href="{% url 'recipe_details' recipe.id %}" class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">{{ recipe.name }} </a></h4>
+            </div>
+            <p>Ingredients: {{recipe.ingredient}}
+            <p>Instructions: {{ recipe.instruction }}</p>
+            <p>Servings: {{ recipe.servings }}</p>
+                {% comment %} <li class="ph3 pv3 bb b--light-silver">
+                    {% for ingredient in recipe.recipe_ingredientId_set.ingredient_set %}
+                        <a href="{% url 'ingredient_details' ingredient.id %}">{{ ingredient.name }}:  {{ ingredient.quantity }} {{ ingredient.measurement }}</a>
+                    {% endfor %}
+                </li> {% endcomment %}
+            </p>
+        </li>
+    {% endfor %}
+    {% if request.user.is_authenticated %}   
+    </ol>
+</article>
+    <div class="flex items-center justify-center">
+        <form action="{% url 'recipe_form' %}"><button class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">Add Recipe</button></form>
+    </div>
 {% endif %}
 {% endblock content %}

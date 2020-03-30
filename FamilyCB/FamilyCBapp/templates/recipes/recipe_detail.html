@@ -1,30 +1,32 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
-
+<div class="pl0 ml0 center mw6 ba b--light-red br2 light-red ">
     <section id="recipe-details">
-    <h1>{{ recipe.name }}</h1>
-    <ol>
-        <li>Instructions: {{ recipe.instruction }}</li>
-        <li>Ingredients: {{ recipe.ingredient}} </li>
-        <li>servings: {{ recipe.servings}} </li>
-    </ol>
-</section>
-    {% if recipe.member_id == request.user.member.id %}
-    <form action="{% url 'recipe_delete' recipe.id %}" method="GET">
-    {% csrf_token %}
-       <button>Delete</button>
-    </form> 
-    <form action="{% url 'recipe_edit_form' recipe.id %}" method="GET">
-    {% csrf_token %}
-        <button>Edit</button>
-    </form>
-    {% else%}
-    <div> This is not your recipe. </div>
-    {% endif %}
+        <div class="flex items-center justify-center" >        
+            <h1>{{ recipe.name }}</h1>
+        </div>
+        <ol>
+            <p>Ingredients: {{ recipe.ingredient}} </p>
+            <p>Instructions: {{ recipe.instruction }}</p>
+            <p>servings: {{ recipe.servings}} </p>
+        </ol>
+    </section>
+    <div class="flex items-center justify-center" >
+        {% if recipe.member_id == request.user.member.id %}
+        <form action="{% url 'recipe_delete' recipe.id %}" method="GET">
+        {% csrf_token %}
+            <button class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">Delete</button>
+        </form> 
+        <form action="{% url 'recipe_edit_form' recipe.id %}" method="GET">
+        {% csrf_token %}
+            <button class="f5 no-underline black bg-animate hover-bg-light-blue hover-light-red inline-flex items-center pa3 ba border-box mr4 bg-washed-yellow light-red b--light-red">Edit</button>
+        </form>
+        {% else%}
+        <div> This is not your recipe. </div>
+        {% endif %}
 
-    
-    
-
+    </div>
+</div>
 
 {% endblock %}

@@ -19,3 +19,18 @@ body {
   .navList__route {
     margin: 0 0.5em;
   }
+  .off-green {
+    color: #cfd9ce;
+  }
+  .forest-green {
+    color: #F9F9F9;
+  }
+  .darker-green {
+    color: #F9F9F9;
+  }
+  .off-slate {
+    color: #F9F9F9;
+  }
+  .dark-slate {
+    color: #F9F9F9;
+  }
